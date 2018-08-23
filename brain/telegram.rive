@@ -1,0 +1,36 @@
+
++ (start)
+- Olá, estou aqui para tirar sua dúvidas sobre Linux! \o/
+
++ [*] (compactar|compacto|comprimo|comprimir) [*]
+- Você pode fazer isso usando o *tar* com:\n
+^ ``` tar cf archive.tar file1 [...]```
+^ ou criar um arquivo *comprimido* (usando *bzip2*):\n
+^ ``` tar cjf archive.tar.bz2 file1 [...]```\n
+^ ou com o algoritmo *xz* ao invés de *bzip2*, trocando o `j` pelo `J`:\n
+^ ``` tar cJf archive.tar.xz file1 [...]```\n
+
++ [*] (extraio|extrair|descompactar|descompacto|descomprimir) [*]
+- Você pode fazer isso usando o *tar* utilizando:\n
+^ ``` tar -xvf archive.tar```
+
++ [*] (criar|crio|faco|fazer) [*] (diretorio|pasta) [*]
+- Você pode fazer isso usando o comando *tar* com:\n
+^ ``` mkdir nomedapasta```
+
++ [*] (ip|rede) [*]
+- Você pode fazer isso usando o comando *ifconfig* com:\n
+^ ``` ifconfig`
+
++ [*] new member [*]
+- Bem vindo ao grupo
+- Seja bem vindo! Por favor, se apresente pra galera
+
++ [*] (regras|rules) [*]
+- \n1. Evitem off-topic.\n
+^2. Falar apenas sobre o intuito do grupo: KISS, Rice e T.I.\n
+^3. Proibido política.\n
+^4. Não pode mandar bom dia/tarde/noite\n
+^5. Respeitem uns aos outros, independente do gosto.\n
+^6. Proibido a divulgação de grupos sem a permissão de algum admin.\n\n
+^Admin's: @mhess @Valeyard1

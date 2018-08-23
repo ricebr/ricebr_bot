@@ -2,6 +2,30 @@
 
 ! version = 2.0
 
+> object curlcheat python
+    from urllib import parse
+    import requests
+    from bs4 import BeautifulSoup
+
+    query = " ".join(args)
+    link = ('http://cht.sh/' + 
+            query.split()[0] + 
+            '/'+parse.quote_plus(" ".join(query.split()[1:])))
+    
+    headers = requests.utils.default_headers()
+    headers.update({'User-Agent': 'My User Agent 1.0'})
+    response = requests.get(link, headers=headers)
+
+    soup = BeautifulSoup(response.content, "html.parser")
+    text = soup.find_all("pre")[-1].text.replace('\n$', '')
+    
+    resp = "\n".join(text.split("\n")[:-2])
+
+    print(query, link, text)
+
+    return resp
+< object
+
 > object base64 python
     import base64 as b64
     mess = " ".join(args)
@@ -12,7 +36,7 @@
         # Python3's Base64 requires bytes, not a str,
         # so encode the str into bytes.
         mess = mess.encode()
-        base = b64.b64encode(mess)
+        base = b64.b6base644encode(mess)
 
         # Return the base64 result, decoded back into a str.
         return base.decode()
@@ -21,27 +45,8 @@
         return b64.b64encode(mess)
 < object
 
-> object add python
-    # This function returns an int, and shows that the results
-    # from python object macros are always casted to str.
-    a, b = args
-    return int(a) + int(b)
-< object
++ [*] (codifica|codifique|encode|encoda) * (em|pra|para) base64 [*]
+- <call>base64 <star></call>
 
-> object setvar python
-    # This function demonstrates using rs.current_user() to get
-    # the current user ID, to set a variable for them.
-    uid   = rs.current_user()
-    var   = args[0]
-    value = " ".join(args[1:])
-    rs.set_uservar(uid, var, value)
-< object
-
-+ encode * in base64
-- OK: <call>base64 <star></call>
-
-+ what is # plus #
-- <star1> + <star2> = <call>add <star1> <star2></call>
-
-+ python set * to *
-- Setting user variable <star1> to <star2>.<call>setvar <star1> <star2></call>
++ [*] cheat *
+- <call>curlcheat <star></call>
