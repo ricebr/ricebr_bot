@@ -19,7 +19,7 @@
     soup = BeautifulSoup(response.content, "html.parser")
     text = soup.find_all("pre")[-1].text.replace('\n$', '')
     
-    resp = "\n".join(text.split("\n")[:-2])
+    resp = """{}{}\n{}""".format('```', "\n".join(text.split("\n")[:-2]), '```')
 
     print(query, link, text)
 
